@@ -2,16 +2,41 @@
 <html>
 
   <head>
-    <title>JS Hello World</title>
-  </head>
+      <style>
+         body {
+             background-color: #35596E;
+             background-image: url('https://www.shiftapp.net/kakao/templet_personal_34.gif');
+          }
+      </style>
+    <title>FirstFile</title>
 
-  <body>
 
-    <script>
-      var name = prompt('Input your name!!');
-      document.write('Welcome ' + name);
+    <script language="javascript">
+
+    function intent() {
+        window.location.href = "https://uk9336.github.io/Web.github.io/"
+    }
+
+    function popup() {
+        window.open("https://uk9336.github.io/Web.github.io", "Main", "width = 500, height = 500, top = 100, left = 200, location = no");
+    }
+
+    function popup2() {
+        window.open("https://www.naver.com", "Main", "width = 500, height = 500, top = 100, left = 200, location = no");
+    }
 
     </script>
+  </head>
+
+
+  <body>
+      
+   
+    <input type = 'button' onclick='intent()' value='버튼' />
+    <input type = 'button' onclick='popup()' value='버튼' />
+    <input type = 'button' onclick='popup2()' value='버튼' />
+    
+
   </body>
 
 </html>
