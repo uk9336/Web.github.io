@@ -1,92 +1,105 @@
-<!doctype html>
+<!DOCTYPE html>
 <html>
 
-  <head>
-      <style>
-          body{
-	margin-top: 100px;
-	font-family: 'Trebuchet MS', serif;
-	line-height: 1.6
-}
-.container{
-	width: 500px;
-	margin: 0 auto;
-}
+<head>
+    <meta charset="UTF-8">
+    <style>
+        #container {
+            width: 960px;
+            margin: 0 auto;
+            text-align: center;
+        }
 
+        .tab {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
 
+        /* Float the list items side by side */
+        .tab li {
+            float: left;
+        }
 
-ul.tabs{
-	margin: 0px;
-	padding: 0px;
-	list-style: none;
-}
-ul.tabs li{
-	background: none;
-	color: #222;
-	display: inline-block;
-	padding: 10px 15px;
-	cursor: pointer;
-}
+        /* Style the links inside the list items */
+        .tab li a {
+            display: inline-block;
+            color: #000;
+            text-align: center;
+            text-decoration: none;
+            padding: 14px 16px;
+            font-size: 17px;
+            transition: 0.3s;
+        }
 
-ul.tabs li.current{
-	background: #ededed;
-	color: #222;
-}
+        /* Style the tab content */
+        .tabcontent {
+            display: none;
+            background-color: rgb(0, 154, 200);
+            padding: 6px 12px;
+            color: #fff;
+        }
 
-.tab-content{
-	display: none;
-	background: #ededed;
-	padding: 15px;
-}
+        ul.tab li.current {
+            background-color: rgb(0, 154, 200);
+            color: #222;
+        }
 
-.tab-content.current{
-	display: inherit;
-}
-      </style>
+        .tabcontent.current {
+            display: block;
+        }
+    </style>
+    <script src="https://code.jquery.com/jquery-1.10.2.js"></script>
 
     <title>SecondFile</title>
-    <div class="container">
 
-        <ul class="tabs">
-            <li class="tab-link current" data-tab="tab-1">메뉴_하나</li>
-            <li class="tab-link" data-tab="tab-2">메뉴_둘</li>
-            <li class="tab-link" data-tab="tab-3">메뉴_셋</li>
+</head>
+
+<body>
+    <div id="container">
+        <h2>SecondFile</h2>
+        <p>제작자 : 이지원</p>
+        <p>테스트 페이지</p>
+        <ul class="tab">
+            <li class="current" data-tab="tab1"><a href="#">TAB1</a></li>
+            <li data-tab="tab2"><a href="#">TAB2</a></li>
+            <li data-tab="tab3"><a href="#">TAB3</a></li>
+            <li data-tab="tab4"><a href="#">TAB4</a></li>
         </ul>
-    
-        <div id="tab-1" class="tab-content current">
-    ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ----
+
+        <div id="tab1" class="tabcontent current">
+            <h3>TAB1</h3>
+            <p>1번 페이지</p>
         </div>
-        <div id="tab-2" class="tab-content">
-    ---- ---- ★------ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ★-- ---- ---- ------★ ---- ---- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- ---- ★------ ---- ---- ---- ----
+
+        <div id="tab2" class="tabcontent">
+            <h3>TAB2</h3>
+            <p>2번 페이지</p>
         </div>
-        <div id="tab-3" class="tab-content">
-    ---- ★-- -------- ---- ---- ---- -★- ---- ---- -------- ---- -★- ---- ---- ---- ---- -------- ---- ---- ---- ---- ---- --★ -------- ★-- ---- ---- ---- ---- ---- -------- ---- ---- --★ ---- ---- ---- -------- ---- ---- ---- --★
+
+        <div id="tab3" class="tabcontent">
+            <h3>TAB3</h3>
+            <p>3번 페이지</p>
         </div>
-    
+
+        <div id="tab4" class="tabcontent">
+            <h3>TAB4</h3>
+            <p>4번 페이지</p>
+        </div>
     </div>
 
     <script language="javascript">
-
-$(document).ready(function(){
-	
-	$('ul.tabs li').click(function(){
-		var tab_id = $(this).attr('data-tab');
-
-		$('ul.tabs li').removeClass('current');
-		$('.tab-content').removeClass('current');
-
-		$(this).addClass('current');
-		$("#"+tab_id).addClass('current');
-	})
-
-})
+        $(function () {
+            $('ul.tab li').click(function () {
+                var activeTab = $(this).attr('data-tab');
+                $('ul.tab li').removeClass('current');
+                $('.tabcontent').removeClass('current');
+                $(this).addClass('current');
+                $('#' + activeTab).addClass('current');
+            })
+        });
     </script>
-  </head>
-
-
-  <body>
-    
-
-  </body>
+</body>
 
 </html>
